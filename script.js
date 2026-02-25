@@ -55,9 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      GITHUB REPOS FETCH
   ========================= */
-
   const username = "RamzaTariq";
-  const excludeRepos = ["RamzaTariq"]; // add repo names to exclude if needed
+  const excludeRepos = ["RamzaTariq"]; 
 
   async function fetchRepos() {
     try {
