@@ -1,36 +1,105 @@
-const username = "RamzaTariq";
-const exclude = "team-a-calc";
+/* =========================
+   TYPING ANIMATION
+========================= */
 
-async function fetchRepos() {
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${username}/repos`
-    );
-    const data = await response.json();
+document.addEventListener("DOMContentLoaded", () => {
+  const phrases = [
+    "Software Developer",
+    "Frontend Engineer",
+    "Web Creator",
+    "Problem Solver",
+    "Tea Addict"
+  ];
 
-    const container = document.getElementById("repoList");
+  const typingEl = document.getElementById("typing");
 
-    data
-      .filter(repo => repo.name !== exclude)
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
-      .forEach(repo => {
-        const div = document.createElement("div");
-        div.classList.add("project-card");
+  if (!typingEl) return;
 
-        div.innerHTML = `
-          <h3>
-            <a href="${repo.html_url}" target="_blank">
-              ${repo.name}
-            </a>
-          </h3>
-          <p>${repo.description || "No description provided."}</p>
-        `;
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-        container.appendChild(div);
-      });
-  } catch (error) {
-    console.error("GitHub API error:", error);
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseAfterTyping = 1200;
+
+  function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      charIndex--;
+    } else {
+      charIndex++;
+    }
+
+    typingEl.textContent = currentPhrase.slice(0, charIndex);
+
+    // When finished typing
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      setTimeout(() => (isDeleting = true), pauseAfterTyping);
+    }
+
+    // When finished deleting
+    if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+
+    const delay = isDeleting ? deletingSpeed : typingSpeed;
+    setTimeout(typeEffect, delay);
   }
-}
 
-fetchRepos();
+  typeEffect();
+
+
+  /* =========================
+     GITHUB REPOS FETCH
+  ========================= */
+
+  const username = "RamzaTariq";
+  const excludeRepos = ["RamzaTariq"]; // add repo names to exclude if needed
+
+  async function fetchRepos() {
+    try {
+      const response = await fetch(
+        `https://api.github.com/users/${username}/repos`
+      );
+
+      if (!response.ok) {
+        throw new Error("GitHub API request failed");
+      }
+
+      const data = await response.json();
+      const container = document.getElementById("repoList");
+
+      if (!container) return;
+
+      container.innerHTML = "";
+
+      data
+        .filter(repo => !excludeRepos.includes(repo.name))
+        .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+        .slice(0, 6) // limit to 6 most recent
+        .forEach(repo => {
+          const div = document.createElement("div");
+          div.classList.add("project-card");
+
+          div.innerHTML = `
+            <h3>
+              <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                ${repo.name}
+              </a>
+            </h3>
+            <p>${repo.description || "No description provided."}</p>
+          `;
+
+          container.appendChild(div);
+        });
+
+    } catch (error) {
+      console.error("GitHub API error:", error);
+    }
+  }
+
+  fetchRepos();
+});

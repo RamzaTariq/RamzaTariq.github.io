@@ -1,3 +1,7 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
 :root {
   --bg: #f8f9fb;
   --text: #1f2933;
@@ -6,10 +10,18 @@
   --border: #e5e7eb;
 }
 
+/* =========================
+   GLOBAL RESET
+========================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,21 +29,19 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section {
-  padding: 80px 0;
-}
+/* =========================
+   TYPOGRAPHY
+========================= */
 
 h1 {
   font-size: 48px;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 h2 {
@@ -48,12 +58,30 @@ p {
   color: var(--muted);
 }
 
-/* Navigation */
+/* =========================
+   LAYOUT
+========================= */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
 .nav {
   background: white;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .nav-inner {
@@ -68,15 +96,24 @@ p {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
   color: var(--accent);
 }
 
-/* Hero */
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero {
-  padding: 100px 0 80px 0;
+  padding: 120px 0 100px 0;
+}
+
+.hero h1 {
+  margin-bottom: 16px;
 }
 
 .hero-sub {
@@ -88,6 +125,10 @@ p {
   margin-top: 32px;
 }
 
+/* =========================
+   BUTTONS
+========================= */
+
 .btn-primary,
 .btn-secondary {
   display: inline-block;
@@ -96,6 +137,7 @@ p {
   border-radius: 6px;
   font-weight: 500;
   margin-right: 12px;
+  transition: all 0.2s ease;
 }
 
 .btn-primary {
@@ -103,12 +145,23 @@ p {
   color: white;
 }
 
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
 .btn-secondary {
   border: 1px solid var(--border);
   color: var(--text);
 }
 
-/* Skills */
+.btn-secondary:hover {
+  background: var(--border);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -119,9 +172,18 @@ p {
   padding: 20px;
   border: 1px solid var(--border);
   background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Projects */
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
 .projects-grid {
   margin-top: 24px;
   display: grid;
@@ -132,6 +194,12 @@ p {
   padding: 20px;
   border: 1px solid var(--border);
   background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .project-card a {
@@ -142,21 +210,49 @@ p {
 .featured {
   margin-bottom: 20px;
   border-left: 4px solid var(--accent);
+  padding-left: 16px;
 }
 
-/* Contact */
+/* =========================
+   CONTACT
+========================= */
+
 .contact-links a {
   display: block;
   margin-top: 10px;
   text-decoration: none;
   color: var(--accent);
+  transition: opacity 0.2s ease;
 }
 
-/* Footer */
+.contact-links a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
   padding: 40px 0;
   text-align: center;
   border-top: 1px solid var(--border);
   background: white;
   color: var(--muted);
+}
+
+/* =========================
+   TYPING CURSOR
+========================= */
+
+.cursor {
+  display: inline-block;
+  margin-left: 4px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
