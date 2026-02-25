@@ -1,0 +1,162 @@
+:root {
+  --bg: #f8f9fb;
+  --text: #1f2933;
+  --muted: #6b7280;
+  --accent: #1f4ed8;
+  --border: #e5e7eb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* Navigation */
+.nav {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.nav-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+.hero {
+  padding: 100px 0 80px 0;
+}
+
+.hero-sub {
+  margin-top: 16px;
+  max-width: 600px;
+}
+
+.hero-actions {
+  margin-top: 32px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+/* Projects */
+.projects-grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 20px;
+}
+
+.project-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.project-card a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.featured {
+  margin-bottom: 20px;
+  border-left: 4px solid var(--accent);
+}
+
+/* Contact */
+.contact-links a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+/* Footer */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: white;
+  color: var(--muted);
+}
