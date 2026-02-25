@@ -1,11 +1,9 @@
-/* =========================
-   TYPING ANIMATION
-========================= */
+/* === TYPING ANIMATION === */
 
 document.addEventListener("DOMContentLoaded", () => {
   const phrases = [
     "Software Developer",
-    "Frontend Engineer",
+    "Full-Stack Engineer",
     "Web Creator",
     "Problem Solver",
     "Tea Addict"
@@ -52,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   typeEffect();
 
 
-  /* =========================
-     GITHUB REPOS FETCH
-  ========================= */
+  /* === GITHUB REPOS FETCH === */
   const username = "RamzaTariq";
   const excludeRepos = ["RamzaTariq"]; 
 

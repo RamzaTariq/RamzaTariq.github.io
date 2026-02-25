@@ -1,6 +1,4 @@
-/* =========================
-   ROOT VARIABLES
-========================= */
+/* === ROOT VARIABLES === */
 
 :root {
   --bg: #f8f9fb;
@@ -10,9 +8,7 @@
   --border: #e5e7eb;
 }
 
-/* =========================
-   GLOBAL RESET
-========================= */
+/* === GLOBAL RESET === */
 
 * {
   margin: 0;
@@ -34,9 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
+/* === TYPOGRAPHY === */
 
 h1 {
   font-size: 48px;
@@ -58,9 +52,7 @@ p {
   color: var(--muted);
 }
 
-/* =========================
-   LAYOUT
-========================= */
+/* === LAYOUT === */
 
 .container {
   width: 90%;
@@ -69,12 +61,10 @@ p {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* === NAVIGATION === */
 
 .nav {
   background: white;
@@ -104,9 +94,7 @@ p {
   color: var(--accent);
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* === HERO SECTION === */
 
 .hero {
   padding: 120px 0 100px 0;
@@ -125,9 +113,7 @@ p {
   margin-top: 32px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* === BUTTONS === */
 
 .btn-primary,
 .btn-secondary {
@@ -158,9 +144,7 @@ p {
   background: var(--border);
 }
 
-/* =========================
-   SKILLS
-========================= */
+/* === SKILLS === */
 
 .skills-grid {
   display: grid;
@@ -180,9 +164,7 @@ p {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* =========================
-   PROJECTS
-========================= */
+/* === PROJECTS === */
 
 .projects-grid {
   display: grid;
@@ -222,9 +204,7 @@ p {
   padding-left: 16px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* === CONTACT === */
 
 .contact-links a {
   display: block;
@@ -240,9 +220,7 @@ p {
 
 
 
-/* =========================
-   FOOTER
-========================= */
+/* === FOOTER === */
 
 .footer {
   padding: 40px 0;
@@ -252,9 +230,7 @@ p {
   color: var(--muted);
 }
 
-/* =========================
-   TYPING CURSOR
-========================= */
+/* === TYPING CURSOR === */
 
 .cursor {
   display: inline-block;
