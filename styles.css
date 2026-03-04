@@ -1,14 +1,32 @@
-/* === ROOT VARIABLES === */
+/* =========================================
+   ROOT VARIABLES (LIGHT MODE DEFAULT)
+========================================= */
 
 :root {
   --bg: #f8f9fb;
+  --surface: #ffffff;
   --text: #1f2933;
   --muted: #6b7280;
   --accent: #1f4ed8;
   --border: #e5e7eb;
 }
 
-/* === GLOBAL RESET === */
+/* =========================================
+   DARK MODE VARIABLES
+========================================= */
+
+body.dark-mode {
+  --bg: #0f172a;
+  --surface: #111827;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --accent: #3b82f6;
+  --border: #1e293b;
+}
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
 
 * {
   margin: 0;
@@ -28,9 +46,13 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* === TYPOGRAPHY === */
+/* =========================================
+   TYPOGRAPHY
+========================================= */
 
 h1 {
   font-size: 48px;
@@ -52,7 +74,9 @@ p {
   color: var(--muted);
 }
 
-/* === LAYOUT === */
+/* =========================================
+   LAYOUT
+========================================= */
 
 .container {
   width: 90%;
@@ -64,14 +88,17 @@ p {
   padding: 50px 0;
 }
 
-/* === NAVIGATION === */
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .nav {
-  background: white;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background 0.3s ease;
 }
 
 .nav-inner {
@@ -86,7 +113,6 @@ p {
   text-decoration: none;
   color: var(--text);
   font-weight: 500;
-  position: relative;
   transition: color 0.2s ease;
 }
 
@@ -94,7 +120,27 @@ p {
   color: var(--accent);
 }
 
-/* === HERO SECTION === */
+/* Theme Toggle */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--border);
+  transform: scale(1.05);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
 
 .hero {
   padding: 120px 0 100px 0;
@@ -113,7 +159,9 @@ p {
   margin-top: 32px;
 }
 
-/* === BUTTONS === */
+/* =========================================
+   BUTTONS
+========================================= */
 
 .btn-primary,
 .btn-secondary {
@@ -144,7 +192,9 @@ p {
   background: var(--border);
 }
 
-/* === SKILLS === */
+/* =========================================
+   SKILLS
+========================================= */
 
 .skills-grid {
   display: grid;
@@ -155,7 +205,7 @@ p {
 .skill-card {
   padding: 20px;
   border: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -164,7 +214,9 @@ p {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* === PROJECTS === */
+/* =========================================
+   PROJECTS
+========================================= */
 
 .projects-grid {
   display: grid;
@@ -173,7 +225,7 @@ p {
 }
 
 .project-card {
-  background: white;
+  background: var(--surface);
   padding: 24px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -185,17 +237,8 @@ p {
   box-shadow: 0 12px 24px rgba(0,0,0,0.08);
 }
 
-.project-card h3 {
-  margin-bottom: 12px;
-}
-
 .project-card p {
-  color: var(--muted);
   margin-bottom: 16px;
-}
-
-.project-card .btn-primary {
-  text-decoration: none;
 }
 
 .featured {
@@ -204,33 +247,102 @@ p {
   padding-left: 16px;
 }
 
-/* === CONTACT === */
+/* =========================================
+   CONTACT (UPGRADED)
+========================================= */
 
-.contact-links a {
-  display: block;
-  margin-top: 10px;
+.contact-wrapper {
+  display: flex;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.contact-intro {
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item span {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.contact-item a {
+  font-weight: 500;
   text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.contact-item a:hover {
   color: var(--accent);
-  transition: opacity 0.2s ease;
 }
 
-.contact-links a:hover {
-  opacity: 0.8;
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: var(--surface);
+  color: var(--text);
+}
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(31, 78, 216, 0.1);
+}
 
-/* === FOOTER === */
+/* Responsive */
+
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .footer {
   padding: 40px 0;
   text-align: center;
   border-top: 1px solid var(--border);
-  background: white;
+  background: var(--surface);
   color: var(--muted);
 }
 
-/* === TYPING CURSOR === */
+/* =========================================
+   TYPING CURSOR
+========================================= */
 
 .cursor {
   display: inline-block;

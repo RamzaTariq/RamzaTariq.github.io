@@ -13,15 +13,20 @@
 
   <!-- Navigation -->
   <nav class="nav">
-    <div class="container nav-inner">
-      <div class="logo">Ramza Tariq</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+    <div class="nav-inner">
+  <div class="logo">Ramza Tariq</div>
+
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+    <span id="themeIcon">🌙</span>
+  </button>
+</div>
   </nav>
 
   <!-- Hero -->
@@ -137,19 +142,55 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="section container contact-section">
-    <h2>Get In Touch</h2>
-    <p>
-      Open to professional opportunities, collaborations, and development roles.
-    </p>
+<section id="contact" class="section">
+  <div class="container">
 
-    <div class="contact-links">
-      <a href="mailto:ramza_tariq@outlook.com">ramza_tariq@outlook.com</a>
-      <a href="https://github.com/RamzaTariq" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/your-linkedin-url" target="_blank">LinkedIn</a>
+    <h2>Get In Touch</h2>
+
+    <div class="contact-wrapper">
+
+      <!-- LEFT: Info Panel -->
+      <div class="contact-info">
+        <p class="contact-intro">
+          Open to professional opportunities, collaborations, and development roles.
+        </p>
+
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:ramza_tariq@outlook.com">
+            ramza_tariq@outlook.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span>GitHub</span>
+          <a href="https://github.com/RamzaTariq" target="_blank">
+            github.com/RamzaTariq
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="https://linkedin.com/in/your-linkedin-url" target="_blank">
+            linkedin.com/in/your-linkedin-url
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn-primary">
+          Send Message
+        </button>
+      </form>
+
     </div>
-  </section>
-  
+  </div>
+</section>
   
   <footer class="footer">
     © 2026 Ramza Tariq
