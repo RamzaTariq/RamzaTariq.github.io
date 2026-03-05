@@ -92,6 +92,12 @@ p {
    NAVIGATION
 ========================================= */
 
+.logo {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+
 .nav {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -220,21 +226,22 @@ p {
 
 .projects-grid {
   display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .project-card {
   background: var(--surface);
-  padding: 24px;
+  padding: 20px;
   border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .project-card p {
@@ -248,7 +255,7 @@ p {
 }
 
 /* =========================================
-   CONTACT (UPGRADED)
+   CONTACT 
 ========================================= */
 
 .contact-wrapper {
