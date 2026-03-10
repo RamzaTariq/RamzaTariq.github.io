@@ -254,6 +254,28 @@ p {
   padding-left: 16px;
 }
 
+/* PROJECT BUTTONS */
+
+.project-buttons{
+display:flex;
+gap:10px;
+margin-top:12px;
+}
+
+.project-buttons a{
+font-size:14px;
+padding:8px 14px;
+}
+
+
+/* ALIGN BUTTONS IN CARDS */
+
+.project-card{
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
 /* =========================================
    CONTACT 
 ========================================= */
