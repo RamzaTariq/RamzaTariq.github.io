@@ -5,8 +5,12 @@
   <title>Ramza Tariq | Software Developer</title>
 
 <!-- Googel Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+
 </head>
 
 <body>
@@ -146,51 +150,65 @@
      <div id="repoList" class="projects-grid"></div> 
 </section>
 
+<!-- Contacts -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Have a project in mind?</h2>
 
-<!-- Contact --> 
- <section id="contact" class="section"> 
-  <div class="container"> 
-    <h2>Have a project in mind?</h2> 
-    <div class="contact-wrapper"> 
-      
-<!-- LEFT: Info Panel --> 
- <div class="contact-info"> 
-  <p class="contact-intro"> My inbox is always open for new opportunities, 
-    collaborations, and development roles. </p> 
-  <div class="contact-item"> 
-    <span>Email</span> 
-    <a href="mailto:ramza_tariq@outlook.com"> ramza_tariq@outlook.com </a> 
-  </div> 
-  
-  <div class="contact-item"> 
-    <span>GitHub</span> 
-    <a href="https://github.com/RamzaTariq" target="_blank"> github.com/RamzaTariq </a> 
-  </div> 
-  
-  <div class="contact-item"> 
-    <span>LinkedIn</span> 
-    <a href="https://www.linkedin.com/in/ramza-tariq" target="_blank"> linkedin.com/in/ramza-tariq </a> 
-  </div> 
-</div> 
+    <div class="contact-wrapper">
 
-<!-- RIGHT: Contact Form --> 
- <form class="contact-form" id="contactForm"> 
-  <input type="text" name="name" placeholder="Your Name" required> 
-  <input type="email" name="email" placeholder="Your Email" required> 
-  <textarea name="message" rows="6" placeholder="Your Message" required></textarea> 
-  
-  <button type="submit" class="btn-primary"> 
-    Send Message 
-  </button> 
- </form>
+      <!-- LEFT: Info Panel -->
+      <div class="contact-info">
+
+        <p class="contact-intro">
+          My inbox is always open for new opportunities, collaborations, and development roles.
+        </p>
+
+      <div class="contact-item">
+        <div class="social-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <a href="mailto:ramza_tariq@outlook.com">ramza_tariq@outlook.com</a>
+      </div>
+
+      <div class="contact-item">
+        <div class="social-icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <a href="https://github.com/RamzaTariq" target="_blank">github.com/RamzaTariq</a>
+      </div>
+
+      <div class="contact-item">
+        <div class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </div>
+        <a href="https://www.linkedin.com/in/ramza-tariq" target="_blank">linkedin.com/in/ramza-tariq</a>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <form class="contact-form" id="contactForm">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+
+        <input type="email" name="email" placeholder="Your Email" required>
+
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn-primary">
+          Send Message
+        </button>
+
+      </form>
 
     </div>
   </div>
 </section>
 
 
+
+
 <footer class="footer">
-© 2026 Ramza Tariq
+© 2026 Ramza Tariq. All Rights Reserved.
 </footer>
 
 <script src="script.js"></script>
